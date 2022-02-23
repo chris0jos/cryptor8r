@@ -1,0 +1,130 @@
+<html>
+    <head>
+        <title>CryptoR8r</title>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+        <link href="clr.css" rel="stylesheet" type="text/css">
+        <style>
+          
+            .maintxt{
+                color: rgb(222, 152, 236);
+                font-family: quicksand;
+                font-weight: 400;
+            }
+
+            .egg{
+                background-color: #1d0e33
+                
+            }
+
+        </style>
+
+    </head>
+
+    <script>
+        //javascript code here 
+
+        const number = "299"
+        const flrdnum = parseInt(number)
+        console.log(flrdnum)
+
+    const api = 'http://api.coinlayer.com/api/live?access_key=7b243e48ad48fd04534e9a1a6e44685e'
+
+
+function BTC() {
+    const api = 'http://api.coinlayer.com/api/live?access_key=7b243e48ad48fd04534e9a1a6e44685e'
+fetch(api)
+    .then(response => {
+        
+        
+       return response.json()
+    })
+    .then(data => {
+        console.log(data)
+        const results = data.rates.BTC
+        console.log(results)
+        const convertedint = parseInt(results)
+        const flrd = Math.round(convertedint)
+        document.getElementById('data').innerHTML = flrd + "$"
+        console.log(flrd)
+       
+    })
+}
+
+function BNB() {
+    const api = 'http://api.coinlayer.com/api/live?access_key=7b243e48ad48fd04534e9a1a6e44685e'
+fetch(api)
+    .then(response => {
+        
+        
+       return response.json()
+    })
+    .then(data => {
+        console.log(data)
+        const results = data.rates.BNB
+        console.log(results)
+        const convertedint = parseInt(results)
+        const flrd = Math.round(convertedint)
+        document.getElementById('data').innerHTML = flrd + "$"
+        console.log(flrd)
+       
+    })
+}
+
+function ETH() {
+    const api = 'http://api.coinlayer.com/api/live?access_key=7b243e48ad48fd04534e9a1a6e44685e'
+fetch(api)
+    .then(response => {
+        
+        
+       return response.json()
+    })
+    .then(data => {
+        console.log(data)
+        const results = data.rates.ETH
+        console.log(results)
+        const convertedint = parseInt(results)
+        const flrd = Math.round(convertedint)
+        document.getElementById('data').innerHTML = flrd + "$"
+        console.log(flrd)
+       
+    })
+}
+
+    </script>
+    <body class="egg">
+        <div class="container">
+            <center>
+
+                <img src="ethpurp.png" align="center" height="300" width="200" class="img-responsive m-5">
+
+       <h1 id="egg" class="m-5 maintxt">Click the crypto you want</h1>
+
+       <div class="row">
+           <div class="col-sm">
+       
+                <button id="eggo" onclick="BTC()" class="btn btn-outline-groovyy m-5 jusbtn btn-lg">BTC</button>
+            
+            </div> 
+
+            <div class="col-sm">
+       
+                <button id="eggo" onclick="BNB()" class="btn btn-outline-groovyy m-5 jusbtn btn-lg">BNB</button>
+            
+            </div> 
+
+            <div class="col-sm">
+       
+                <button id="eggo" onclick="ETH()" class="btn btn-outline-groovyy m-5 jusbtn btn-lg">ETH</button>
+            
+            </div> 
+
+        </div>
+       
+       <h1 id="data" class="h-25% w-25% maintxt m-5">RATES</h1>
+        
+
+            </center>
+
+        </div>
+    </body>
+</html>
